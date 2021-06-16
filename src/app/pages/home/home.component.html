@@ -1,13 +1,7 @@
- <!-- carousel -->
  
-  <!-- end carousel -->
-
-  <!-- body -->
   <section class="why mandiri gold">
     
-    <div class="container"> <!-- agar content margin auto tengah-->
-      <!-- <hr style="color: black; margin-top: 120px;"> -->
-      <!-- untuk kotsk kecil diatas portfolio -->
+    <div class="container"> 
         <div class="mb-4 mt-3" >
           <div class="container">
             <div class="row">
@@ -17,69 +11,35 @@
       </div>
 
 
-      <!-- untuk gambar -->
-      <div class="row mt-2" >  <!-- agar bisa menggunakan grid pada bootstrap-->
-        <div class="col-6" style="margin-top: 20px;">  <!-- membagi grid menjadi 2 col-6 untuk ditaro gambar-->
-            <img src="assets/subs.png" alt="" width="500px;"> <!-- width untuk kelebaran gambar agar kecil-->
+     
+      <div class="row mt-2" > 
+        <div class="col-6" style="margin-top: 20px;"> 
+            <img src="assets/subs.png" alt="" width="500px;"> 
         </div>
 
-        <!-- untuk bagian tulisan -->
         <div class="col-6 " style="margin-top: 80px;">
             <div class="row">
-                <!-- agar grid terisi penuh col-12 untuk judul -->
                 <div class="col-12 mb-4">
                   <h3 class="text-center">Why Mandiri Gold</h3>
                 </div>
 
-                <!-- grid baru col-4 agar bisa dibagi 3 bagian -->
-                <div class="col-4 text-center">
-                    <h4>Delivery</h4>
-                    <p> we have free delivery <br> 
-                      services to all city in <br>
-                      indonesia</p>
+                <div class="col-4 text-center" *ngFor="let service of serviceBenefits">
+                    <h4>{{service.benefitName}}</h4>
+                    <p> {{service.description}}</p>
                 </div>
-                <div class="col-4 text-center">
-                    <h4>Legality</h4>
-                    <p> we commit to keep your
-                      trusted eith legality
-                    transaction</p>
-                </div>
-                <div class="col-4 text-center">
-                    <h4>Price</h4>
-                    <p> Good quality with the
-                      best prices <br>
-                    </p>
-                </div>
+                
             </div>
 
-            <!-- baris tulisan dibawahnya -->
             <div class="row">
-              <!-- grid baru col-4 agar bisa dibagi 3 bagian -->
-            <div class="col-4 text-center">
-                <h4>Reward</h4>
-                <p> we have free delivery 
-                  service to all why in 
-                indonesia</p>
-            </div>
-            <div class="col-4 text-center">
-                <h4>Transaction</h4>
-                <p> we have free delivery 
-                  service to all why in
-                indonesia</p>
-            </div>
-            <div class="col-4 text-center">
-                <h4>Brand</h4>
-                <p> we have free delivery 
-                  service to all why in 
-                indonesia</p>
+            <div class="col-4 text-center" *ngFor="let product of productBenefits">
+                <h4>{{product.benefitName}}</h4>
+                <p> {{ product.description }}</p>
             </div>
             </div>
 
-            <!-- membuat grid baru full,  agar button nya memiliki lebar yang full-->
-            <!-- untuk button -->
             <div class="row">
                 <div class="col-lg-12 mt-lg-3">
-                    <button class="btn-warning text-white" style="width: 100%;">Register</button>  <!-- width:100% -> membuat button lebar full-->
+                    <button class="btn-warning text-white" style="width: 100%;">Register</button> 
                 </div>
             </div>       
         </div>
@@ -100,34 +60,19 @@
   
   <section class="Portfolio" style="background-color:#F5F5F5;">
     <div class="container">
-        <div class="row justify-content-center">     <!-- agar col/grid bisa berada ditengah -->       
+        <div class="row justify-content-center">      
             <div class="col-12">
                 <h3 class="text-center my-4">Our Portfolio</h3>
             </div>
-            <div class="col-3 mr-4">
-                <div class="card" style="width: 16rem;">
-                    <img src="assets/1.png" class="img-thumbnail" alt="...">
+            <div class="col-3 mr-4" *ngFor="let cardData of cardDatas">
+                <div class="card" style="width: 16rem;" >
+                    <img src="{{cardData.path}}" class="img-thumbnail" alt="...">
                     <div class="card-body">
-                      <p class="card-text">Platinum Investment</p>
+                      <p class="card-text">{{cardData.productName}}</p>
                     </div>
                   </div>
                 </div>
-            <div class="col-3 mr-4">
-                <div class="card" style="width: 16rem;">
-                    <img src="assets/2.png" class="img-thumbnail" alt="...">
-                    <div class="card-body">
-                      <p class="card-text">Platinum Investment</p>
-                    </div>
-                  </div>
-            </div>                    
-            <div class="col-3 mr-4 mb-4">
-                <div class="card" style="width: 16rem;">
-                    <img src="assets/3.png" class="img-thumbnail" alt="...">
-                    <div class="card-body">
-                      <p class="card-text">Platinum Investment</p>
-                    </div>
-                  </div>
-            </div>
+            
         </div>           
     </div>
 </section>

@@ -15,7 +15,7 @@ import { TemplateModule } from '../template/template.module';
   ],
   imports: [
     CommonModule,
-    TemplateModule,
+    TemplateModule
   ],
   exports: [
     PagesComponent
