@@ -6,7 +6,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { TemplateModule } from '../template/template.module';
 import { BenefitsComponent } from './components/benefits/benefits.component';
 import { ProdutcComponent } from './components/produtc/produtc.component';
-
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -19,7 +19,8 @@ import { ProdutcComponent } from './components/produtc/produtc.component';
   ],
   imports: [
     CommonModule,
-    TemplateModule
+    TemplateModule,
+    SharedModule
   ],
   exports: [
     PagesComponent

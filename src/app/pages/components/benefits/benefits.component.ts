@@ -6,18 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./benefits.component.scss']
 })
 export class BenefitsComponent implements OnInit {
+  title = 'why mandiri gold'
 
   serviceBenefits = [
     {
-      benefitName : "Transaction",
+      benefitName : "transaction",
       description: "Our Transaction is simple and secure"
     },
     {
-      benefitName : "Delivery",
+      benefitName : "delivery",
       description: "We Have Free Delivery Service To All City in Indonesia"
     },
     {
-      benefitName : "Reward",
+      benefitName : "reward",
       description: "More transaction more point more reward"
     }
   ]
