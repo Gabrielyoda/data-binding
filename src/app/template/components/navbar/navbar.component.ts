@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  sampleDate = new Date();
+
   constructor() { }
 
   ngOnInit(): void {
