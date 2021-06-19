@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
       password: password
     };
 
-    sessionStorage.setItem('User', JSON.stringify(user))
+    sessionStorage.setItem('USER-DATA', JSON.stringify(user))
     this.userService.setUser(user)
     .then((users) =>{
       console.log(users);
