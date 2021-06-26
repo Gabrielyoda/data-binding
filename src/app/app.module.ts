@@ -6,7 +6,6 @@ import { from } from 'rxjs';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
-import { TemplateModule } from './template/template.module';
 
 
 @NgModule({
@@ -17,8 +16,7 @@ import { TemplateModule } from './template/template.module';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    PagesModule,
-    TemplateModule
+    PagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

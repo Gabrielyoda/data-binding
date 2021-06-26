@@ -4,6 +4,7 @@ import { TemplateComponent } from './template.component';
 import { NavbarComponent } from './components/navbar/navbar.component'
 import { FooterComponent } from './components/footer/footer.component'
 import { SharedModule } from 'src/app/shared/shared.module';
+import { RouterModule } from '@angular/router'
 //layouting
 const LAYOUT: any = [];
 const   COMPONENTS = [NavbarComponent,FooterComponent,TemplateComponent];
@@ -15,10 +16,14 @@ const   COMPONENTS = [NavbarComponent,FooterComponent,TemplateComponent];
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    RouterModule
   ],
   exports:[
-    TemplateComponent
+    TemplateComponent,
+    CommonModule,
+    ...LAYOUT,
+    ...COMPONENTS
   ]
 })
 export class TemplateModule { }
