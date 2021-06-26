@@ -1,0 +1,12 @@
+body {
+    content: '';
+    background-image: url(../../../assets/carousel1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: fixed;
+    z-index: -1;
+    opacity: 0.1;
+    height: 100%;
+    width: 100%;
+}

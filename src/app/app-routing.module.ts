@@ -4,13 +4,18 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
     {
         path: '',
-        loadChildren: () => import('./pages/pages.module')
-            .then((m) => m.PagesModule), //lazy load
+        loadChildren: () => import('./pages/home/home.module')
+            .then((m) => m.HomeModule), //lazy load
     },
     {
         path: 'login',
         loadChildren: () => import('./pages/login/login.module')
         .then((m) => m.LoginModule)
+    },
+    {
+        path: 'register',
+        loadChildren: () => import('./pages/register/register.module')
+        .then((m) => m.RegisterModule)
     }
 ]
 

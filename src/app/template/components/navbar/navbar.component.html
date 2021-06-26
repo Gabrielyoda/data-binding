@@ -24,7 +24,16 @@
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>  
           </form> -->
 
-          <a class="btn btn-outline-success my-2 my-sm-0" href="#">Login</a>  
+          <a class="btn btn-outline-success my-2 my-sm-0" routerLink="/login">Login</a> 
+          
+          <div class="dropdown user-dropdown" ><a class="btn btn-stripped dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="assets/logo.png" alt="Foto Profil" class="profile-photo" width="50" height="auto">
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" style="margin-right: 1.5rem;" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" routerLink="/profile"><i class="fa fa-user-circle mr-1"></i> Profil</a>
+                <a class="dropdown-item" (click)="logout()"><i class="fa fa-power-off mr-1"></i> Keluar</a>
+            </div>
+        </div>
         </div>
     </div>
 

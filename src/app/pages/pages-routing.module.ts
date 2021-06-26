@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
+import { RouteGuard } from '../shared/guards/route.guard';
 //import { RouteGuard } from '../shared/guards/route.guard';
 import { PagesComponent } from './pages.component';
 
@@ -7,10 +8,12 @@ const routes : Routes = [
     {
 
         path: '',
-        component: PagesComponent,      
+        component: PagesComponent,
+        canActivate: [RouteGuard],      
         children: [
             {
                 path: '',
+                pathMatch: 'full',
                 loadChildren: () => import('./home/home.module')
                 .then((m) => m.HomeModule)
             },
@@ -18,7 +21,12 @@ const routes : Routes = [
                 path: 'dashboard',
                 loadChildren: () => import('./dashboard/dashboard.module')
                 .then((m) => m.DashboardModule)
-            }
+            },
+            {
+                path: 'profile',
+                loadChildren: () => import('./profile/profile.module')
+                .then((m) => m.ProfileModule)
+            },
 
             
         ]

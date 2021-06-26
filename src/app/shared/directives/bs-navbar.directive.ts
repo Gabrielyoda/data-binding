@@ -17,7 +17,7 @@ export class BsNavbarDirective {
     if(window.pageYOffset>0){
       this.defaultStyle = NavbarStyle.default
     } else {
-      this.defaultStyle = NavbarStyle.transparent
+      this.defaultStyle = NavbarStyle.default
     }
   }
 

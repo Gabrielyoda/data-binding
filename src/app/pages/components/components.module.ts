@@ -4,6 +4,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { BenefitsComponent } from './benefits/benefits.component';
 import { ProdutcComponent } from './produtc/produtc.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     SharedModule,
+    RouterModule
   ],
   exports:[
     CarouselComponent,
