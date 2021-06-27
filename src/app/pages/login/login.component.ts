@@ -1,6 +1,6 @@
 import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 import { User } from '../models/user.ts';
-import { FormControl, FormGroup } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserServiceService } from './user-service.service';
 import { Router } from '@angular/router';
 
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  userForm: FormGroup = new FormGroup({});
   user:User[] = [];
 
   @Output() outputTask: EventEmitter<User> = new EventEmitter();
@@ -20,13 +20,11 @@ export class LoginComponent implements OnInit {
     private readonly router :Router,
   ) { }
 
-  userForm:FormGroup = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl('')
-  })
-
   ngOnInit(): void {
-   
+    this.userForm = new FormGroup({
+      username: new FormControl(null , [Validators.required]),
+      password: new FormControl(null , [Validators.required])
+    })
   }
 
   addTask(): void{
@@ -43,4 +41,18 @@ export class LoginComponent implements OnInit {
       console.log(users);
     })  
    }
+
+   getErrors(formControlName: string): string[]{
+    const control : AbstractControl = this.userForm.get(formControlName) as AbstractControl;
+    const errors = control.errors;
+
+    if(control.invalid && (control.dirty || control.touched) && errors ) {
+      return Object.keys(errors).map(key => {
+        return `${formControlName} ${key} ${errors[key]}`;
+      });
+    }
+    else{
+      return [] as string[];
+    }
+  }
 }

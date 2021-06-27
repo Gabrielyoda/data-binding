@@ -31,28 +31,28 @@
                 <h5 style="padding-left: 10px;">My Histories</h5>
             </div>
 
-            <div class="card mb-3">
+            <div class="card mb-3" *ngFor="let history of historyTrans">
                 <div class="card-body">
                   <table cellpadding="10">
                     <tr>
                         <td><label>Buy</label></td>
                         <td><label>:</label></td>
-                        <td><label>Date</label></td>
+                        <td><label>{{ history.dateHistory}}</label></td>
                     </tr>
                     <tr>
                         <td><label>Product Name</label></td>
                         <td><label>:</label></td>
-                        <td><label>Gold</label></td>
+                        <td><label>{{ history.productName}}</label></td>
                     </tr>
                     <tr>
                         <td><label>Quantity</label></td>
                         <td><label>:</label></td>
-                        <td><label>1 gram</label></td>
+                        <td><label>{{ history.qtyGram}}</label></td>
                     </tr>
                     <tr>
                         <td><label>Total Price</label></td>
                         <td><label>:</label></td>
-                        <td><label>Rp. 100.000</label></td>
+                        <td><label>{{ history.totalPrice}}</label></td>
                     </tr>
                   </table>
 
